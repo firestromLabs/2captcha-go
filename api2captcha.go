@@ -204,7 +204,6 @@ func (c *Client) res(req Request) (*string, error) {
 		return nil, err
 	}
 	data := body.String()
-	log.Println("Status "+resp.Status+" data "+data)
 
 	if resp.StatusCode != http.StatusOK {
 		return nil, ErrApi
@@ -294,7 +293,6 @@ func (c *Client) Send(req Request) (string, error) {
 		return "", err
 	}
 	data := body.String()
-	log.Println("Status "+resp.Status+" data "+data)
 
 	if resp.StatusCode != http.StatusOK {
 		return "", ErrApi
